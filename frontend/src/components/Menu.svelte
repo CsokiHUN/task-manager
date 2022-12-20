@@ -23,10 +23,10 @@
     <p class="font-bold uppercase text-sm mb-2">All boards ({$Boards.length})</p>
 
     {#each $Boards as board}
-      <li on:click={() => selectBoard(board._id)} class="mb-2">
-        <span class={`${$activeBoardId === board._id ? 'bg-primary text-white' : ''}`}
-          ><i class="fa-solid fa-clipboard-list" />{board.name || 'Unknown'}</span
-        >
+      <li on:click={() => selectBoard(board?._id)} class="mb-2">
+        <span class={`${$activeBoardId === board?._id ? 'bg-primary text-white' : ''}`}>
+          <i class="fa-solid fa-clipboard-list" />{board?.name || 'Unknown'}
+        </span>
       </li>
     {/each}
     <li>

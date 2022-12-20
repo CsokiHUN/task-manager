@@ -10,7 +10,7 @@
     <div class="w-4 h-4 rounded-full shadow-md bg-primary mr-2" />
     {title}
   </h5>
-  {#each tasks as task}
+  {#each tasks || [] as task}
     <Card {task} />
   {/each}
 </div>
