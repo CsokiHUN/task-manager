@@ -3,10 +3,6 @@
 
   import { Boards, activeBoardId } from '../stores';
 
-  function changeTheme({ target }) {
-    console.log(target.checked);
-  }
-
   function selectBoard(id) {
     if (id === $activeBoardId) return;
     activeBoardId.set(id);
@@ -34,9 +30,15 @@
     </li>
 
     <div class="bottom-4 w-72 fixed">
-      <div class="bg-gray-700 text-xl flex justify-between items-center px-10 py-2">
+      <div class="bg-gray-200 dark:bg-gray-700 text-xl flex justify-between items-center px-10 py-2">
         <i class="fa-solid fa-sun" />
-        <input on:change={changeTheme} type="checkbox" class="toggle" />
+        <input
+          checked={(localStorage.getItem('theme') || '') === 'dark'}
+          data-toggle-theme="light,dark"
+          data-act-class="ACTIVECLASS"
+          type="checkbox"
+          class="toggle"
+        />
 
         <i class="fa-solid fa-moon" />
       </div>

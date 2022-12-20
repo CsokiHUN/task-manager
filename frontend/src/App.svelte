@@ -1,4 +1,11 @@
 <script>
+  import { afterUpdate, onMount } from 'svelte';
+  import { themeChange } from 'theme-change';
+
+  onMount(() => {
+    themeChange(false);
+  });
+
   import Menu from './components/Menu.svelte';
   import Header from './components/Header.svelte';
   import NewTaskModal from './components/NewTaskModal.svelte';
